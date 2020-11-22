@@ -1,6 +1,6 @@
 build:
 	#protoc -I. --go_out=plugins=grpc:. proto/demo/demo.proto
-	protoc -I. --go_out=plugins=micro:. proto/demo/demo.proto
+	protoc -I. --micro_out=. --go_out=. proto/demo/demo.proto
 	GOOS=linux GOARCH=amd64 go build -tags netgo
 	docker build -t laracom-demo-service .
 run:

@@ -1,7 +1,7 @@
 syntax = "proto3";
-option go_package = "proto/demo";
+//option go_package = "proto/demo";
 
-package demo;
+package laracom.demo.service;
 
 service DemoService {
   rpc SayHello(DemoRequest) returns (DemoResponse) {}
