@@ -3,9 +3,17 @@ syntax = "proto3";
 package laracom.user.service;
 
 service UserService {
+    rpc Auth(User) returns (Token) {}
+    rpc ValidateToken(Token) returns (Token) {}
     rpc Create(User) returns (Response) {}
     rpc Get(User) returns (Response) {}
     rpc GetAll(Request) returns (Response) {}
+}
+
+message Token {
+    string token = 1;
+    bool valid = 2;
+    repeated Error errors = 3;
 }
 
 message User {

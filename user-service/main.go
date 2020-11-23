@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	micro "github.com/micro/go-micro/v2"
+	"github.com/tanglei25/laracom/user-service/service"
 	"log"
 	database "github.com/tanglei25/laracom/user-service/db"
 	pb "github.com/tanglei25/laracom/user-service/proto/user"
@@ -26,7 +27,8 @@ func main() {
 
 	// 初始化 Repo 实例用于后续数据库操作
 	repo := &repository.UserRepository{db}
-
+	// 初始化 token service
+	token := &service.TokenService{repo}
 	// 以下是 Micro 创建微服务流程
 	srv := micro.NewService(
 		micro.Name("laracom.user.service"),
@@ -35,7 +37,7 @@ func main() {
 	srv.Init()
 
 	// 注册处理器
-	pb.RegisterUserServiceHandler(srv.Server(), &handler.UserService{repo})
+	pb.RegisterUserServiceHandler(srv.Server(), &handler.UserService{repo,token})
 
 	// 启动用户服务
 	if err := srv.Run(); err != nil {

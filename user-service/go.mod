@@ -19,6 +19,7 @@ require (
 	github.com/micro/go-micro/v2 v2.9.1-0.20200723075038-fbdf1f2c1c4c
 	github.com/miekg/dns v1.1.29 // indirect
 	github.com/prometheus/client_golang v1.6.0 // indirect
+	github.com/satori/go.uuid v1.2.0
 	github.com/stretchr/testify v1.6.1 // indirect
 	go.etcd.io/bbolt v1.3.5 // indirect
 	go.uber.org/atomic v1.6.0 // indirect
