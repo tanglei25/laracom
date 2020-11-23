@@ -1,0 +1,12 @@
+FROM alpine:latest
+
+# 更新安装源
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
+    && apk update \
+    && apk add --no-cache bash \
+    && mkdir /app
+WORKDIR /app
+
+ADD demo-cli /app/demo-cli
+
+CMD ["/app/demo-cli"]

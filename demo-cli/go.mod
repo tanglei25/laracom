@@ -3,13 +3,17 @@ module github.com/tanglei25/laracom/demo-cli
 go 1.14
 
 require (
+	github.com/gin-gonic/gin v1.6.3 // indirect
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/json-iterator/go v1.1.10 // indirect
-	github.com/micro/go-micro v1.18.0
-	github.com/onsi/ginkgo v1.12.0 // indirect
+	github.com/micro/go-micro/v2 v2.9.1
+	github.com/micro/micro/v2 v2.9.3 // indirect
+	github.com/micro/protobuf v0.0.0-20180321161605-ebd3be6d4fdb // indirect
+	github.com/spf13/cobra v1.0.0 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stretchr/testify v1.6.1 // indirect
-	github.com/tanglei25/laracom/demo-service v0.0.0-20201121194634-e345a8fe9e94
+	github.com/tanglei25/laracom/demo-service v0.0.0-20201122182759-1e45e40dff98
 	go.etcd.io/bbolt v1.3.5 // indirect
 	golang.org/x/crypto v0.0.0-20200709230013-948cd5f35899 // indirect
 	golang.org/x/net v0.0.0-20200707034311-ab3426394381 // indirect
